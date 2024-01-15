@@ -225,8 +225,6 @@ class OpenIDConnectPlugin(BasePlugin):
             permissions.append(SALEOR_STAFF_PERMISSION)
             scope_permissions = " ".join(permissions)
             scope += f" {scope_permissions}"
-        if self.config.enable_refresh_token:
-            scope += " offline_access"
         return OAuth2Client(
             client_id=self.config.client_id,
             client_secret=self.config.client_secret,
@@ -365,6 +363,9 @@ class OpenIDConnectPlugin(BasePlugin):
         }
         if self.config.audience:
             kwargs["audience"] = self.config.audience
+        if self.config.enable_refresh_token:
+            kwargs["access_type"] = "offline"
+            kwargs["prompt"] = "consent"
         uri, state = self.oauth.create_authorization_url(
             self.config.authorization_url, **kwargs
         )
