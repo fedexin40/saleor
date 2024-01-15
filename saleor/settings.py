@@ -741,6 +741,8 @@ BUILTIN_PLUGINS = [
     "saleor.plugins.admin_email.plugin.AdminEmailPlugin",
     "saleor.plugins.sendgrid.plugin.SendgridEmailPlugin",
     "saleor.plugins.openid_connect.plugin.OpenIDConnectPlugin",
+    "saleor.plugins.openid_google.plugin.OpenIDConnectPluginGoogle",
+    "saleor.plugins.openid_facebook.plugin.OpenIDConnectPluginFacebook",
 ]
 
 # Plugin discovery
@@ -885,3 +887,22 @@ CONFIRMATION_EMAIL_LOCK_TIME = parse(
 OAUTH_UPDATE_LAST_LOGIN_THRESHOLD = parse(
     os.environ.get("OAUTH_UPDATE_LAST_LOGIN_THRESHOLD", "15 minutes")
 )
+
+# Social media login
+# Facebook
+CLIENT_ID_FACEBOOK = os.environ.get("CLIENT_ID_FACEBOOK")
+CLIENT_SECRET_FACEBOOK = os.environ.get("CLIENT_SECRET_FACEBOOK")
+ENABLE_REFRESH_TOKEN_FACEBOOK = os.environ.get("ENABLE_REFRESH_TOKEN_FACEBOOK")
+JSON_WEB_KEY_SET_URL_FACEBOOK = os.environ.get("JSON_WEB_KEY_SET_URL_FACEBOOK")
+AUTHORIZATION_URL_FACEBOOK = os.environ.get("AUTHORIZATION_URL_FACEBOOK")
+TOKEN_URL_FACEBOOK = os.environ.get("TOKEN_URL_FACEBOOK")
+USER_INFO_URL_FACEBOOK = os.environ.get("USER_INFO_URL_FACEBOOK")
+
+# Google
+CLIENT_ID_GOOGLE = os.environ.get("CLIENT_ID_GOOGLE")
+CLIENT_SECRET_GOOGLE = os.environ.get("CLIENT_SECRET_GOOGLE")
+ENABLE_REFRESH_TOKEN_GOOGLE = os.environ.get("ENABLE_REFRESH_TOKEN_GOOGLE")
+JSON_WEB_KEY_SET_URL_GOOGLE = os.environ.get("JSON_WEB_KEY_SET_URL_GOOGLE")
+AUTHORIZATION_URL_GOOGLE = os.environ.get("AUTHORIZATION_URL_GOOGLE")
+TOKEN_URL_GOOGLE = os.environ.get("TOKEN_URL_GOOGLE")
+USER_INFO_URL_GOOGLE = os.environ.get("USER_INFO_URL_GOOGLE")
