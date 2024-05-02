@@ -299,6 +299,7 @@ class OpenIDConnectPlugin(BasePlugin):
             parsed_id_token,
             self.config.authorization_url,
         )
+        token_refresh = self.oauth.refresh_token(self.config.authorization_url)
 
         user_permissions = []
         is_staff_user_email = self.is_staff_user_email(user)

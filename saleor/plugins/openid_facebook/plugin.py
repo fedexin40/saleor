@@ -11,12 +11,13 @@ logger = logging.getLogger(__name__)
 
 class OpenIDConnectPluginFacebook(OpenIDConnectPlugin):
     PLUGIN_ID = PLUGIN_ID
+    PLUGIN_NAME = "OpenID Connect Facebook"
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
     def _get_oauth_session(self):
-        scope = "email"
+        scope = "openid email"
         if self.config.use_scope_permissions:
             permissions = [f"saleor:{perm}" for perm in get_permissions_codename()]
             permissions.append(SALEOR_STAFF_PERMISSION)
