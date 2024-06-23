@@ -743,6 +743,7 @@ BUILTIN_PLUGINS = [
     "saleor.plugins.openid_connect.plugin.OpenIDConnectPlugin",
     "saleor.plugins.openid_google.plugin.OpenIDConnectPluginGoogle",
     "saleor.plugins.openid_facebook.plugin.OpenIDConnectPluginFacebook",
+    "saleor.plugins.openid_facebook.plugin.OpenIDConnectPluginApple",
 ]
 
 # Plugin discovery
