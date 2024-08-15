@@ -119,8 +119,8 @@ DATABASE_ROUTERS = ["saleor.core.db_routers.PrimaryReplicaRouter"]
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
-TIME_ZONE = "UTC"
-LANGUAGE_CODE = "en"
+TIME_ZONE = "EST"
+LANGUAGE_CODE = "es-mx"
 LANGUAGES = CORE_LANGUAGES
 LOCALE_PATHS = [os.path.join(PROJECT_ROOT, "locale")]
 USE_I18N = True
