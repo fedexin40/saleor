@@ -1061,9 +1061,6 @@ class Checkout(ModelObjectType[models.Checkout]):
             )
 
     @staticmethod
-    @one_of_permissions_required(
-        [CheckoutPermissions.MANAGE_CHECKOUTS, PaymentPermissions.HANDLE_PAYMENTS]
-    )
     def resolve_transactions(root: models.Checkout, info: ResolveInfo):
         return TransactionItemsByCheckoutIDLoader(info.context).load(root.pk)
 
